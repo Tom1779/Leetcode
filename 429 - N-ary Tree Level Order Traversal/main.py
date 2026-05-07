@@ -7,9 +7,6 @@ class Node:
 """
 
 def getLevels(node, height, levels):
-    if node == None:
-        return
-
     height += 1
     if len(levels) < height:
         levels.append([node.val])
@@ -21,6 +18,10 @@ def getLevels(node, height, levels):
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
+        if root == None:
+            return []
+
+
         levels = []
 
         getLevels(root, 0, levels)
